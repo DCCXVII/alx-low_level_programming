@@ -1,5 +1,8 @@
 #include "main.h"
-
+/**
+ * main function related with 
+ * 0-putchar.c
+ * */
 int main(void)
 {
 char c[] = "_putchar\n";
