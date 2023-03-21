@@ -1,8 +1,12 @@
 #include "main.h"
+
 /**
- * main function related with 
- * 0-putchar.c
- * */
+ * main - Entry point
+ *
+ * Description: Prints "_putchar" using the _putchar function
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 char c[] = "_putchar\n";
