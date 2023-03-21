@@ -1,12 +1,11 @@
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * print_alphabet - prints the alphabet in lowercase
  */
-int main(void)
-{
-print_alphabet();
-return (0);
-}
+
+void print_alphabet(void);
+int _putchar(char c);
+
+#endif /* MAIN_H */
