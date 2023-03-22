@@ -4,6 +4,7 @@
 /**
  * print_alphabet - prints the alphabet in lowercase
  */
+int print_sign(int c);
 int _isalpha(int c);
 int _islower(int c);
 void print_alphabet_x10(void);
