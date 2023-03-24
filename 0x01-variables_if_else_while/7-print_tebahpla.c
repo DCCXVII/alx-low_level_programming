@@ -1,7 +1,10 @@
 #include <stdio.h>
+
 /**
- * main etc..
- * */
+* main etc..
+*
+*/
+
 int main(void)
 {
 int letter = 'z';
