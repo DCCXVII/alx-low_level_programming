@@ -2,15 +2,15 @@
 
 /**
  * main - Entry point
- * Description: Prints all single digit numbers of base 10 starting from 0,
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-int number;
+int i;
 
-for (number = 0; number < 10; number++)
-putchar(number + '0');
-
+for (i = 0; i < 10; i++)
+putchar(i + '0');
 putchar('\n');
 
 return (0);
