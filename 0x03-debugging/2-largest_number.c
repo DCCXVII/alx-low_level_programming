@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * largest_number
- * Return: largest number
- */
+* largest_number
+* Return: largest number
+*/
 
 int largest_number(int a, int b, int c)
 {
