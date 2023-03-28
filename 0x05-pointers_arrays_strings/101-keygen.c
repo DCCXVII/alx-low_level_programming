@@ -9,12 +9,12 @@
  */
 int main(void)
 {
-int sum = 0, i, rand_num;
-char password[84];
+int i, rand_num;
+char password[100];
 
 srand(time(NULL));
 
-for (i = 0; sum < 2772; i++)
+for (i = 0; i < 58; i++)
 {
 rand_num = rand() % 62;
 
@@ -24,11 +24,11 @@ else if (rand_num < 52)
 password[i] = 'A' + (rand_num - 26);
 else
 password[i] = '0' + (rand_num - 52);
-
-sum += password[i];
 }
 
-password[i] = '\0';
+password[57] = 'a' + (2772 - 'a' - 'A' - '0');
+password[58] = 'A';
+password[59] = '\0';
 
 printf("%s", password);
 
