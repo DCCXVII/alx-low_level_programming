@@ -2,15 +2,15 @@
 
 /**
  * _strcat - concatenates two strings
- * @dest: pointer to destination string
- * @src: pointer to source string
- * Return: pointer to destination string
+ * @dest:char
+ * @src: char
+ * Return:char
  */
 char *_strcat(char *dest, char *src)
 {
 char *dest_start = dest;
 
-/* Find the end of the destination string */
+
 while (*dest != '\0')
 {
 dest++;

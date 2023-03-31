@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * @dest: the string to append to
- * @src: the string to append
- * @n: the maximum number of bytes to use from src
+ * @dest: char
+ * @src: char
+ * @n:int
+ * @Return: char
  */
 char *_strncat(char *dest, char *src, int n)
 {
