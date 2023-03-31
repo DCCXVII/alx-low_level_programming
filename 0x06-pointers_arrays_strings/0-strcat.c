@@ -6,25 +6,17 @@
  * @src: char
  * Return:char
  */
+
 char *_strcat(char *dest, char *src)
 {
-char *dest_start = dest;
+	int dest_len = 0, i;
+	while (*(dest + dest_len) != '\0')
+		dest_len++;
 
+	for (i = 0; *(src + i) != '\0'; i++)
+		*(dest + dest_len + i) = *(src + i);
+	
+	*(dest + dest_len + i) = '\0';
 
-while (*dest != '\0')
-{
-dest++;
-}
-
-
-while (*src != '\0')
-{
-*dest = *src;
-dest++;
-src++;
-}
-
-*dest = '\0';
-
-return dest_start;
+	return dest;
 }
