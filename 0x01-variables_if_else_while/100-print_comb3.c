@@ -1,30 +1,28 @@
 #include <stdio.h>
-#include "main.h"
 
 int main(void)
 {
-int i, j;
+int i, j, k;
 
 for (i = 0; i < 100; i++)
 {
-for (j = i + 1; j < 100; j++)
+j = i % 10; /* Get the second digit */
+k = i / 10; /* Get the first digit */
+
+if (k < j) /* Print only if the first digit is less than the second */
 {
-if (i != j)
+putchar(k + '0'); /* Convert the digits to characters */
+putchar(j + '0');
+
+if (i < 89) /* Print the comma and space only if it is not the last combination */
 {
-putchar((i / 10) + '0');
-putchar((i % 10) + '0');
-putchar(',');
-putchar(' ');
-putchar((j / 10) + '0');
-putchar((j % 10) + '0');
-if (i != 98 || j != 99)
-{
-putchar(',');
+putchar(','); 
 putchar(' ');
 }
 }
 }
-}
-putchar('\n');
-return 0;
+
+putchar('\n'); /* Print the newline character at the end */
+
+return (0);
 }
