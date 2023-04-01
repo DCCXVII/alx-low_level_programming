@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 /**
  * main - Prints all possible combinations of two digits
  *
@@ -8,27 +7,27 @@
  */
 int main(void)
 {
-int i, j, k;
+        int i, j, k;
 
-for (i = 0; i < 100; i++)
-{
-j = i % 10; 
-k = i / 10; 
+        for (i = 0; i < 100; i++)
+        {
+                j = i % 10;
+                k = i / 10;
 
-if (k < j) 
-{
-putchar(k + '0'); 
-putchar(j + '0');
+                if (k < j)
+                {
+                        putchar(k + '0');
+                        putchar(j + '0');
 
-if (i < 89)
-{
-putchar(','); 
-putchar(' ');
-}
-}
-}
+                        if (i < 89)
+                        {
+                                putchar(',');
+                                putchar(' ');
+                        }
+                }
+        }
 
-putchar('\n'); /* Print the newline character at the end */
+        putchar('\n');
 
-return (0);
+        return (0);
 }
