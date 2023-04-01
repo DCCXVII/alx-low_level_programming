@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
+ *_strncat - comcatenates 2 strings
  * @dest: char
  * @src: char
  * @n:int
- * @Return: char
+ * Return: char
  */
 char *_strncat(char *dest, char *src, int n)
 {
