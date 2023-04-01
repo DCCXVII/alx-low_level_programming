@@ -9,20 +9,19 @@
 char *leet(char *str)
 {
 int i, j;
-char leet[] = "43071";
+char leet[] = "4433007711";
 char letters[] = "aeotlAEOTL";
 
-for (i = 0; str[i]; i++)
+for (i = 0; *(str+i); i++)
 {
-for (j = 0; letters[j]; j++)
+for (j = 0; j<=9 ; j++)
 {
 if (str[i] == letters[j])
 {
-str[i] = leet[j / 2];
-break;
+letters[i] = leet[j];
 }
 }
 }
 
-return str;
+return (str);
 }
