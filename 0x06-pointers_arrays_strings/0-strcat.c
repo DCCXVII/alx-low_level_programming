@@ -6,21 +6,19 @@
  * @src: The source string
  * Return: A pointer to the resulting string dest
  */
+
 char *_strcat(char *dest, char *src)
 {
-    char *str = dest;
+    int dest_len = 0;
+    int i;
 
-    while (*str)
-        str++;
+    while (dest[dest_len] != '\0')
+        dest_len++;
 
-    while (*src)
-    {
-        *str = *src;
-        str++;
-        src++;
-    }
+    for (i = 0; src[i] != '\0'; i++)
+        dest[dest_len + i] = src[i];
 
-    *str = '\0';
+    dest[dest_len + i] = '\0';
 
     return dest;
 }
