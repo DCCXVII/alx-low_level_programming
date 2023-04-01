@@ -7,27 +7,31 @@
  */
 int main(void)
 {
-    int i, j, k;
+	int i, j;
 
-    for (i = 0; i < 100; i++)
-    {
-        j = i % 10;
-        k = i / 10;
+	for (i = 0; i < 100; i++)
+	{
+		j = i + 1;
 
-        if (k < j)
-        {
-            putchar(k + '0');
-            putchar(j + '0');
+		while (j < 100)
+		{
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
+			putchar(' ');
+			putchar((j / 10) + '0');
+			putchar((j % 10) + '0');
 
-            if (i < 89)
-            {
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
+			if (i != 98 || j != 99)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 
-    putchar('\n'); /* Print the newline character at the end */
+			j++;
+		}
+	}
 
-    return (0);
+	putchar('\n');
+
+	return (0);
 }
