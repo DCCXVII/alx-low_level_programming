@@ -8,21 +8,21 @@
  */
 char *leet(char *str)
 {
-    int i, j;
-    char leet[] = "4433007711";
-    char letters[] = "aeotlAEOTL";
+int i, j;
+char leet[] = "4433007711";
+char letters[] = "aeotlAEOTL";
 
-    for (i = 0; str[i] != '\0'; i++)
-    {
-        for (j = 0; j <= 9; j++)
-        {
-            if (str[i] == letters[j])
-            {
-                str[i] = leet[j];
-                break;
-            }
-        }
-    }
+for (i = 0; str[i] != '\0'; i++)
+{
+for (j = 0; j <= 9; j++)
+{
+if (str[i] == letters[j])
+{
+str[i] = leet[j];
+break;
+}
+}
+}
 
-    return (str);
+return (str);
 }
