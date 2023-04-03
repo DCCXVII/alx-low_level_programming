@@ -3,6 +3,6 @@
 
 #include <stddef.h>
 
-char *_memset(char *s, char b, size_t n);
+char *_memset(char *s, char b, unsigned int n);
 int _putchar(char c);
 #endif /* MAIN_H */
