@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 
+void set_string(char **s, char *to);
 void print_diagsums(int *a, int size);
 void print_chessboard(char (*a)[8]);
 char *_strstr(char *haystack, char *needle);
