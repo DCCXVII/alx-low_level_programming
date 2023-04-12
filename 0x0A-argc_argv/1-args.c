@@ -1,11 +1,11 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * main - Prints the number of arguments passed to it.
- * @argc: The number of arguments passed to the program.
- * @argv: An array of pointers to the arguments.
+ * main - Entry point
+ * @argc: Number of command line arguments
+ * @argv: Array containing the command line arguments
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
