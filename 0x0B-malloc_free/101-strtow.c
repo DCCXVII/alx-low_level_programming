@@ -9,17 +9,17 @@
  */
 int word_count(char *str)
 {
-    int count = 0, i;
+int count = 0, i;
 
-    for (i = 0; str[i] != '\0'; ++i)
-    {
-        if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-        {
-            ++count;
-        }
-    }
+for (i = 0; str[i] != '\0'; ++i)
+{
+if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
+{
+++count;
+}
+}
 
-    return count;
+return count;
 }
 
 /**
@@ -27,17 +27,17 @@ int word_count(char *str)
  * @words: The array of words to free
  *
  * Return: nothing
- */
+*/
 void free_words(char **words)
 {
-    int i;
+int i;
 
-    for (i = 0; words[i] != NULL; ++i)
-    {
-        free(words[i]);
-    }
+for (i = 0; words[i] != NULL; ++i)
+{
+free(words[i]);
+}
 
-    free(words);
+free(words);
 }
 
 /**
@@ -71,7 +71,7 @@ return NULL;
 }
 
 for (i = 0, j = 0; j < count; ++i)
-    {
+{
 if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 {
 len = 0;
