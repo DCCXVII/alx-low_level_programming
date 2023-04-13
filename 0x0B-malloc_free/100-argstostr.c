@@ -1,46 +1,40 @@
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * argstostr - concatenates all the arguments of the program
- * @ac: the argument count
- * @av: an array of pointers to the arguments
+ * argstostr - concatenates all the arguments of your program
+ * @ac: argument count
+ * @av: pointer to array of size ac containing arguments
  *
- * Return: a pointer to the new string, or NULL on failure
+ * Return: pointer to new string containing all arguments, or NULL on failure
  */
 char *argstostr(int ac, char **av)
 {
+int i, j, k, len = 0;
 char *str;
-int i, j, len = 0, k = 0;
 
-/* check for null input */
 if (ac == 0 || av == NULL)
 return (NULL);
 
-/* calculate the length of the new string */
 for (i = 0; i < ac; i++)
 {
-for (j = 0; av[i][j]; j++)
+for (j = 0; av[i][j] != '\0'; j++)
 len++;
-len++; /* add one for the new line character */
+len++;
 }
 
-/* allocate memory for the new string */
-str = malloc(sizeof(char) * len);
+str = malloc(sizeof(char) * (len + 1));
 if (str == NULL)
 return (NULL);
 
-/* copy the arguments into the new string */
+k = 0;
 for (i = 0; i < ac; i++)
 {
-for (j = 0; av[i][j]; j++)
-{
-str[k] = av[i][j];
-k++;
+for (j = 0; av[i][j] != '\0'; j++)
+str[k++] = av[i][j];
+str[k++] = '\n';
 }
-str[k] = '\n';
-k++;
-}
-str[k] = '\0'; /* terminate the string with a null character */
 
+str[k] = '\0';
 return (str);
 }
