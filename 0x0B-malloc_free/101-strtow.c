@@ -1,101 +1,55 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdlib.h>
 
 /**
- * word_count - Counts the number of words in a string
- * @str: The string to count
+ * strtow - splits a string into words
+ * @str: the string to split
  *
- * Return: The number of words
- */
-int word_count(char *str)
-{
-    int count = 0, i;
-
-    for (i = 0; str[i] != '\0'; ++i)
-    {
-        if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-        {
-            ++count;
-        }
-    }
-
-    return (count);
-}
-
-/**
- * free_words - Frees an array of words
- * @words: The array of words to free
- *
- * Return: nothing
- */
-void free_words(char **words)
-{
-    int i;
-
-    for (i = 0; words[i] != NULL; ++i)
-    {
-        free(words[i]);
-    }
-
-    free(words);
-}
-
-/**
- * strtow - Splits a string into words
- * @str: The string to split
- *
- * Return: A pointer to an array of strings (words), or NULL if it fails
+ * Return: a pointer to an array of strings (words)
  */
 char **strtow(char *str)
 {
-char **words;
-int count, i, j, k, len;
+char **words = NULL;
+int i, j, k, len, wc = 0;
 
 if (str == NULL || *str == '\0')
-{
 return (NULL);
-}
 
-count = word_count(str);
+len = strlen(str);
 
-words = malloc(sizeof(char *) * (count + 1));
-
-if (words == NULL)
-{
-return (NULL);
-}
-
-for (i = 0, j = 0; j < count; ++i)
+/* count number of words */
+for (i = 0; i < len; i++)
 {
 if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-{
-len = 0;
-
-for (k = i; str[k] != '\0' && str[k] != ' '; ++k)
-{
-++len;
+wc++;
 }
 
-words[j] = malloc(sizeof(char) * (len + 1));
+/* allocate memory for words */
+words = malloc(sizeof(char *) * (wc + 1));
+if (words == NULL)
+return (NULL);
 
-if (words[j] == NULL)
+/* populate words array */
+for (i = 0, k = 0; i < len && k < wc; i++)
 {
-free_words(words);
+if (str[i] != ' ')
+{
+for (j = i; str[j] != ' ' && str[j] != '\0'; j++)
+;
+words[k] = malloc(sizeof(char) * (j - i + 1));
+if (words[k] == NULL)
+{
+while (k-- >= 0)
+free(words[k]);
+free(words);
 return (NULL);
 }
-
-for (k = 0; k < len; ++k)
-{
-words[j][k] = str[i + k];
-}
-
-words[j][k] = '\0';
-
-++j;
+strncpy(words[k], &str[i], j - i);
+words[k++][j - i] = '\0';
+i = j;
 }
 }
 
-words[j] = NULL;
-
+words[k] = NULL;
 return (words);
 }
