@@ -2,6 +2,44 @@
 #include "dog.h"
 
 /**
+ * _strlen - computes the length of a string
+ * @s: string to measure
+ *
+ * Return: length of the string
+ */
+int _strlen(char *s)
+{
+int len = 0;
+
+while (s[len] != '\0')
+len++;
+
+return (len);
+}
+
+/**
+ * _strcpy - copies a string to a buffer
+ * @dest: buffer to copy the string to
+ * @src: string to copy
+ *
+ * Return: pointer to the buffer
+ */
+char *_strcpy(char *dest, char *src)
+{
+int i = 0;
+
+while (src[i] != '\0')
+{
+dest[i] = src[i];
+i++;
+}
+
+dest[i] = '\0';
+
+return (dest);
+}
+
+/**
  * new_dog - creates a new dog
  * @name: name of the dog
  * @age: age of the dog
@@ -40,42 +78,4 @@ new_dog->age = age;
 new_dog->owner = owner_copy;
 
 return (new_dog);
-}
-
-/**
- * _strlen - computes the length of a string
- * @s: string to measure
- *
- * Return: length of the string
- */
-int _strlen(char *s)
-{
-int len = 0;
-
-while (s[len] != '\0')
-len++;
-
-return (len);
-}
-
-/**
- * _strcpy - copies a string to a buffer
- * @dest: buffer to copy the string to
- * @src: string to copy
- *
- * Return: pointer to the buffer
- */
-char *_strcpy(char *dest, char *src)
-{
-int i = 0;
-
-while (src[i] != '\0')
-{
-dest[i] = src[i];
-i++;
-}
-
-dest[i] = '\0';
-
-return (dest);
 }
