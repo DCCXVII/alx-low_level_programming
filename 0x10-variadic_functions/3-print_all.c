@@ -4,7 +4,7 @@
 
 /**
  * print_c - Prints a char.
- * @args: A va_list pointing to the argument to be printed.
+ * @args: A va_list pointing.
  */
 void print_c(va_list args)
 {
@@ -13,7 +13,7 @@ void print_c(va_list args)
 
 /**
  * print_i - Prints an int.
- * @args: A va_list pointing to the argument to be printed.
+ * @args: A va_list pointing.
  */
 void print_i(va_list args)
 {
@@ -22,7 +22,7 @@ void print_i(va_list args)
 
 /**
  * print_f - Prints a float.
- * @args: A va_list pointing to the argument to be printed.
+ * @args: A va_list pointing.
  */
 void print_f(va_list args)
 {
@@ -31,7 +31,7 @@ void print_f(va_list args)
 
 /**
  * print_s - Prints a string.
- * @args: A va_list pointing to the argument to be printed.
+ * @args: A va_list pointing.
  */
 void print_s(va_list args)
 {
@@ -48,7 +48,7 @@ void print_s(va_list args)
 
 /**
  * print_all - Prints anything, followed by a new line.
- * @format: A list of types of arguments passed to the function.
+ * @format: A list of types of arguments.
  */
 void print_all(const char * const format, ...)
 {
