@@ -36,7 +36,6 @@ void print_f(va_list args)
 void print_s(va_list args)
 {
   char *str;
-
   str = va_arg(args, char *);
   if (str == NULL)
     {
@@ -55,7 +54,6 @@ void print_all(const char * const format, ...)
   va_list args;
   int i = 0, j;
   char *separator = "";
-
   printer_t p[] = {
     {'c', print_c},
     {'i', print_i},
@@ -63,13 +61,10 @@ void print_all(const char * const format, ...)
     {'s', print_s},
     {'\0', NULL}
   };
-
   va_start(args, format);
-
   while (format && format[i])
     {
       j = 0;
-
       while (p[j].symbol)
 	{
 	  if (format[i] == p[j].symbol)
@@ -83,7 +78,6 @@ void print_all(const char * const format, ...)
 	}
       i++;
     }
-
   va_end(args);
   printf("\n");
 }
